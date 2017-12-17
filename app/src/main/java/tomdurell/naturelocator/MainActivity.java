@@ -1,5 +1,7 @@
 package tomdurell.naturelocator;
 
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -23,4 +25,20 @@ public class MainActivity extends AppCompatActivity {
         // run Permissions activity
         startActivity(intent);
     }
+
+    public void recordIntent(View view) {
+        // create an intent to start the activity called userPermissions
+        Intent intent = new Intent(this, recordingActivity.class);
+        // run Permissions activity
+        startActivity(intent);
+    }
+    public void cameraIntent(View view){
+
+        int REQUEST_IMAGE_CAPTURE = 1;
+        Intent pictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (pictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(pictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
 }
