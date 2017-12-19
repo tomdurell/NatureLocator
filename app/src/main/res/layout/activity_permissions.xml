@@ -41,7 +41,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationSwitch" />
+        app:layout_constraintTop_toBottomOf="@+id/locationSwitch"
+        app:layout_constraintVertical_bias="0.248" />
 
     <Switch
         android:id="@+id/micSwitch"
@@ -56,6 +57,25 @@
         app:layout_constraintBottom_toTopOf="@+id/locationSwitch"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674"
+        app:layout_constraintHorizontal_bias="0.467" />
+
+    <Switch
+        android:id="@+id/readWriteSwtich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addReadWrite"
+        android:text="Read/Write Permissions"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/micSwitch"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintVertical_bias="0.584" />
 </android.support.constraint.ConstraintLayout>
 

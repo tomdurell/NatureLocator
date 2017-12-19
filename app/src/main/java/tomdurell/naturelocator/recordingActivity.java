@@ -34,14 +34,14 @@ public class recordingActivity extends AppCompatActivity {
         playbackButton = (Button) findViewById(R.id.playbackButton);
         startRecord = (Button) findViewById(R.id.startRecord);
 
-        /*playbackButton.setEnabled(false);
+        playbackButton.setEnabled(false);
         stopRecord.setEnabled(false);
-        audioFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/natureRecording.3gp";*/
+        audioFilePath = "/storage/emulated/0/Android/data/natureRecording.3gp";
     }
 
     public void startRecording (View view) throws IOException
     {
-        /*recordingNow = true;
+        recordingNow = true;
         stopRecord.setEnabled(true);
         playbackButton.setEnabled(false);
         startRecord.setEnabled(false);
@@ -57,7 +57,7 @@ public class recordingActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        mediaRecorder.start();*/
+        mediaRecorder.start();
         Toast.makeText(recordingActivity.this, "Recording Started!", Toast.LENGTH_SHORT).show();
     }
     public void stopRecording (View view)
@@ -66,7 +66,7 @@ public class recordingActivity extends AppCompatActivity {
         stopRecord.setEnabled(false);
         playbackButton.setEnabled(true);
 
-        /*if (recordingNow)
+        if (recordingNow)
         {
             startRecord.setEnabled(false);
             mediaRecorder.stop();
@@ -77,10 +77,10 @@ public class recordingActivity extends AppCompatActivity {
             mediaPlayer.release();
             mediaPlayer = null;
             startRecord.setEnabled(true);
-        }*/
+        }
         Toast.makeText(recordingActivity.this, "Recording Saved!", Toast.LENGTH_SHORT).show();
     }
-    /*public void playbackRecording (View view) throws IOException
+    public void playbackRecording (View view) throws IOException
     {
         playbackButton.setEnabled(false);
         startRecord.setEnabled(false);
@@ -90,6 +90,5 @@ public class recordingActivity extends AppCompatActivity {
         mediaPlayer.setDataSource(audioFilePath);
         mediaPlayer.prepare();
         mediaPlayer.start();
-    }*/
-
+    }
 }

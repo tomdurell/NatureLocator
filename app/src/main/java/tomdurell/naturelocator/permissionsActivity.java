@@ -46,6 +46,14 @@ public class permissionsActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(permissionsActivity.this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
         }
     }
+    public void addReadWrite(View view) {
+        boolean enabled = ((Switch) view).isChecked();
+
+        if (enabled) {
+            ActivityCompat.requestPermissions(permissionsActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,}, 1);
+            ActivityCompat.requestPermissions(permissionsActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,}, 1);
+        }
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
