@@ -54,6 +54,7 @@ public class permissionsActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(permissionsActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,}, 1);
         }
     }
+    //handles the cheers for all permissions
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {

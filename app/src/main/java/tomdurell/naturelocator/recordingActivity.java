@@ -28,14 +28,15 @@ public class recordingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recording);
 
-
-
+        //setup buttons by id
         stopRecord = (Button) findViewById(R.id.stopRecord);
         playbackButton = (Button) findViewById(R.id.playbackButton);
         startRecord = (Button) findViewById(R.id.startRecord);
-
+        //enable record button as no recording is occuring
         playbackButton.setEnabled(false);
+        //disable as no recording is occuring
         stopRecord.setEnabled(false);
+        //setup file fath, change this to randomised at a later date for no errors surrounding
         audioFilePath = "/storage/emulated/0/Android/data/natureRecording.3gp";
     }
 
@@ -45,7 +46,7 @@ public class recordingActivity extends AppCompatActivity {
         stopRecord.setEnabled(true);
         playbackButton.setEnabled(false);
         startRecord.setEnabled(false);
-
+        //setup mediarecorder for recording microphone audio
         try {
             mediaRecorder = new MediaRecorder();
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
@@ -68,7 +69,7 @@ public class recordingActivity extends AppCompatActivity {
 
         if (recordingNow)
         {
-            startRecord.setEnabled(false);
+            startRecord.setEnabled(true);
             mediaRecorder.stop();
             mediaRecorder.release();
             mediaRecorder = null;
@@ -82,10 +83,11 @@ public class recordingActivity extends AppCompatActivity {
     }
     public void playbackRecording (View view) throws IOException
     {
+        //currently not working, possible file path issue?
         playbackButton.setEnabled(false);
         startRecord.setEnabled(false);
         stopRecord.setEnabled(true);
-
+        //setup mediaplayer with same file path for playback
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setDataSource(audioFilePath);
         mediaPlayer.prepare();
